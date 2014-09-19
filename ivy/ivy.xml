@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one
+   or more contributor license agreements.  See the NOTICE file
+   distributed with this work for additional information
+   regarding copyright ownership.  The ASF licenses this file
+   to you under the Apache License, Version 2.0 (the
+   "License"); you may not use this file except in compliance
+   with the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing,
+   software distributed under the License is distributed on an
+   "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+   KIND, either express or implied.  See the License for the
+   specific language governing permissions and limitations
+   under the License.    
+-->
+<ivy-module version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
+    <info
+        organisation="com.kiicloud.api"
+        module="rest-java">
+	</info>
+	
+	
+	<configurations>
+ 		<conf name="default" description="run Time dependencies" />
+	</configurations>
+	
+	
+	<dependencies defaultconf="default" >
+	
+	
+	   <dependency org="org.glassfish.jersey.core" name="jersey-server" rev="2.10"/>
+       
+       <dependency org="org.glassfish.jersey.containers" name="jersey-container-servlet" rev="2.10"/>
+       <dependency org="org.glassfish.jersey.containers" name="jersey-container-servlet-core" rev="2.10"/>
+       
+       <dependency org="org.glassfish.jersey.ext" name="jersey-spring3" rev="2.10"  >
+           <exclude org="org.springframework" />
+       </dependency>
+       <dependency org="org.glassfish.hk2" name="spring-bridge" rev="2.3.0-b05"/>
+       <dependency org="org.glassfish.hk2.external" name="javax.inject" rev="2.3.0-b05"/>
+       <dependency org="org.glassfish.hk2" name="hk2-api" rev="2.3.0-b05"/>
+       <dependency org="org.glassfish.hk2" name="hk2-locator" rev="2.3.0-b05"/>
+       
+       <dependency org="javax.ws.rs" name="javax.ws.rs-api" rev="2.0"/>
+       <dependency org="org.glassfish.jersey.core" name="jersey-client" rev="2.10"/>
+       
+       <dependency org="org.glassfish.jersey.media" name="jersey-media-json-jackson" rev="2.10" >
+         <exclude org="org.codehaus.jackson" />
+       </dependency>
+       
+       <dependency org="com.fasterxml.jackson.jaxrs" name="jackson-jaxrs-json-provider" rev="2.4.1"/>
+       
+  
+       <dependency org="org.springframework" name="spring-web" rev="4.0.3.RELEASE"/>
+       <dependency org="org.springframework" name="spring-context-support" rev="4.0.3.RELEASE"/>
+       
+       <dependency org="org.springframework" name="spring-test" rev="4.0.3.RELEASE" />
+	   
+       
+       
+       <dependency org="javax.validation" name="validation-api" rev="1.1.0.Final"/>
+       
+       <dependency org="org.springframework" name="spring-beans" rev="4.0.3.RELEASE"/>
+       <dependency org="org.springframework" name="spring-context" rev="4.0.3.RELEASE"/>
+       
+       <dependency org="org.springframework" name="spring-test" rev="4.0.3.RELEASE" />
+            
+            
+      <dependency org="commons-beanutils" name="commons-beanutils" rev="1.8.2" />
+      <dependency org="commons-io" name="commons-io" rev="2.4" />
+      <dependency org="commons-codec" name="commons-codec" rev="1.9"/>
+      <dependency org="commons-lang" name="commons-lang" rev="2.6"/>
+      
+        
+       <dependency org="org.mvel" name="mvel2" rev="2.1.9.Final" />
+       <dependency org="com.google.guava" name="guava" rev="16.0" />
+       <dependency org="javax.mail" name="mail" rev="1.4.7"  />
+       <dependency org="org.slf4j" name="slf4j-log4j12" rev="1.7.6"/>
+            
+    </dependencies>
+</ivy-module>                   
+

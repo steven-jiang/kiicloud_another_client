@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-settings>
+  <settings defaultResolver="default"  />
+  <!--Authentication required for publishing (deployment). 'Artifactory Realm' is the realm used by Artifactory so don't change it. -->
+  <CREDENTIALS HOST="localhost" REALM="Artifactory Realm" USERNAME="admin" PASSWD="yourPassword" />
+    <caches artifactPattern="[organisation]/[module]/[type]s/[artifact]-[revision](-[classifier]).[ext]" 
+        overwriteMode="true"   defaultCacheDir="/Users/ethan/program/ivy/cache" />
+ 	<resolvers>
+        
+   		<ibiblio name="local"
+   			 m2compatible="true" root="http://localhost:8081/nexus/content/groups/local/" />
+
+        <ibiblio name="remote" 
+        	m2compatible="true"  root="http://localhost:8081/nexus/content/groups/public/" />
+     
+
+              <ibiblio name="javanet"
+                m2compatible="true" root="https://maven.java.net/content/repositories/releases/" />	
+     
+	    <ibiblio name="maven" 
+		   m2compatible="true"  root="http://central.maven.org/maven2" />
+		   
+        <chain name="default" returnFirst="true">  
+        <resolver ref="javanet" />                  	
+	    <resolver ref="maven" />
+        </chain>
+   </resolvers> 
+</ivy-settings>
